@@ -21,3 +21,13 @@ function logout() {
       localStorage.removeItem("user_name");
       window.location = "index.html";
 }
+
+function addroom(){
+      room = document.getElementById("room_name").value;
+      firebase.database().ref("/").child(room).update({
+            purpose: "adding room name"
+      });
+
+      localStorage.setItem("room" , room);
+      window.location = "kwitter_page.html";
+}

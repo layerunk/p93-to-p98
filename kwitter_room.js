@@ -21,8 +21,9 @@ getData();
 
 function logout() {
       localStorage.removeItem("user_name");
+      localStorage.removeItem("room_name");
       window.location = "index.html";
-}
+  }
 
 function addroom(){
       room = document.getElementById("room_name").value;
@@ -35,6 +36,6 @@ function addroom(){
 
 function redirectToRoomName(name){
       console.log(name);
-      localStorage.setItem("room" , name);
+      localStorage.setItem("room_name" , name);
       window.location = "kwitter_page.html";
 }

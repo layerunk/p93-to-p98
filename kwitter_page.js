@@ -40,6 +40,18 @@ function getData() {
 }
 getData();
 
+function updateLike(){
+    console.log("clicked on liekbutton - " +message_id);
+    button_id = message_id;
+    likes = document.getElementById(button_id).value;
+    updated_like = Number(likes) + 1;
+    console.log(updated_likes);
+
+    firebase.database().ref(room_name).child(message_id).update({
+        like : updated_likes
+    });
+}
+
 function logout() {
     localStorage.removeItem("user_name");
     localStorage.removeItem("room");
